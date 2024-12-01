@@ -6,20 +6,21 @@
     <title>
       {% block title %}
         Dashboard
-      {% endblock %}
+      {% endblock title %}
     </title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
-    <!-- Fonts and icons -->
-    <script src="{% static 'assets/js/plugin/webfont/webfont.min.js' %}"></script>
-
-    <!-- CSS Files -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        rel="stylesheet"
+    />
+ 
+    {% block extra_css %}
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/kaiadmin.min.css' %}" />
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+    {% endblock extra_css %}
   </head>
   <body>
     <div class="wrapper">
@@ -311,6 +312,8 @@
 
       <!-- End Custom template -->
     </div>
+    {% block extra_js %}
+    <script src="{% static 'assets/js/plugin/webfont/webfont.min.js' %}"></script>
     <!-- Core JS Files -->
     <script src="assets/js/core/jquery-3.7.1.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
@@ -337,5 +340,6 @@
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="assets/js/setting-demo.js"></script>
     <script src="assets/js/demo.js"></script>
+    {% endblock extra_js %}
   </body>
 </html>
