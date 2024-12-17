@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def home_view(request):
-    return render(request, 'home/members.html')
+    return render(request, 'home/integrations.html')
